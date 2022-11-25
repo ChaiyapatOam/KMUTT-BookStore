@@ -25,7 +25,7 @@ const main = async () => {
         create: {
           title: `${productAdjective} ${product.title}`,
           description: product.description,
-          price: product.price,
+          price: randNumber({ min: 50, max: 1000 }),
           image: `${product.image}/tech`,
           quantity: randNumber({ min: 10, max: 100 }),
           category: {

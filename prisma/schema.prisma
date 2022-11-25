@@ -16,9 +16,10 @@ model Product {
   id          String    @id @default(cuid())
   title       String    @unique
   description String
+  price       Int
   quantity    Int
   image       String
-  createAt    DateTime  @default(now())
+  createdAt    DateTime  @default(now())
   category    Category? @relation(fields: [categoryId], references: [id])
   categoryId  String
 }
@@ -26,6 +27,6 @@ model Product {
 model Category {
   id       String    @id @default(cuid())
   name     String    @unique
-  createAt DateTime  @default(now())
+  createdAt DateTime  @default(now())
   products Product[]
 }

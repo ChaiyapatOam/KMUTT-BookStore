@@ -6,7 +6,7 @@ export type TApiAllCategoriesResp = {
             title: string;
             description: string;
             image: string;
-            price: string;
+            price: number;
         }[];
     }[];
 };
@@ -20,7 +20,7 @@ export type TApiSingleCategoryWithProductResp = {
             title: string;
             description: string;
             image: string;
-            price: string;
+            price: number;
             quantity: number;
         }[];
         hasMore: boolean;
@@ -31,7 +31,7 @@ export type TApiSingleProductResp = {
     product: {
         title: string;
         description: string;
-        price: string;
+        price: number;
         quantity: number;
         image: string;
     };

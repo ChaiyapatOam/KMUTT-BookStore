@@ -6,6 +6,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        header: "#343C44",
+        navbar: "#969A9E",
+        orange: "#FA4616",
+      },
       fontFamily: {
         body: ["Nunito"],
       },

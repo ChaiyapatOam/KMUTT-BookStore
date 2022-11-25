@@ -1,51 +1,38 @@
 import Head from "next/head";
 import Image from "next/image";
+import ProductCard from "../components/ProductCard";
 import styles from "../styles/Home.module.css";
-
+import FireIcon from "@heroicons/react/24/solid/FireIcon";
 export default function Home() {
+  const nameList = [
+    "Apple",
+    "T-Shirt",
+    "Name",
+    "Book",
+    "YearBook",
+    "LNG120",
+    "LNG220",
+    "Pen",
+    "Pencil",
+    "Table",
+    "Belt",
+    "Necktie",
+  ];
   return (
     <div className="font-body">
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{" "}
-          <code className={styles.code}>pages/index.tsx</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+      <main className="p-6">
+        <div className="popular pl-4 flex flex-start">
+          <h1 className="text-4xl font-bold">Popular</h1>
+          <FireIcon className="h-10 w-8 text-orange" />
         </div>
+
+        {/* Product */}
+        <div className="p-5 grid lg:grid-cols-4 lg:gap-4 md:grid-cols-3 md:gap-3">
+          {nameList.map((p) => {
+            return <ProductCard name={p} price={20} />;
+          })}
+        </div>
+        {/* <ProductCard name="Name" price={20} /> */}
       </main>
     </div>
   );

@@ -16,7 +16,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta property="og:image" content="/Banner.png" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="dark:bg-gray-800 w-full">
+      <main className="font-body dark:bg-gray-800 w-full">
         <Navbar />
         <Component {...pageProps} />
         <Footer />

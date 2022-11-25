@@ -1,6 +1,6 @@
 # KMUTT BookStore
 
-
+![bookstore banner](https://raw.githubusercontent.com/ChaiyapatOam/KMUTT-BookStore/main/public/Banner.png)
 ## About this Project
 KMUTT BookStore is the website online shopping in the part of CPE101 Final Project
 

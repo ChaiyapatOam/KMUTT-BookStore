@@ -18,7 +18,6 @@ const Navbar = () => {
       <a className="px-3" href="">New Student</a>
     </div>
     <div className="p-6 py-3 ">
-      <img className="bg-red-500 px-3 w-[70px] h-[70px]" src="/search-icon.png" alt="" />
     </div>
   </div>
   </div>

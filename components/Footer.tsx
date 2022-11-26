@@ -10,14 +10,14 @@ const Footer = () => {
         </div>
       </div>
       <div className="flex flex-col flex-1 pt-[50px] text-center ">
-        <a className="pb-3 font-bold" href="">Support</a>
+        <a className="pb-3 font-bold text-2xl" href="">Support</a>
         <a className="py-3" href="">FAQ</a>
         <a className="py-3" href="">Privacy</a>
         <a className="py-3" href="">Cookie</a>
         <a className="py-3" href="">Term</a>
       </div>
       <div className="flex flex-col flex-1 pt-[50px] text-center">
-        <div className="font-bold pb-3">Company</div>
+        <div className="font-bold pb-3 text-2xl">Company</div>
         <div className="flex">
           <img className="ml-[125px] my-2 w-8 h-8" src="/Facebook-Logo.png"/>
           <a className="uppercase py-3 mx-3" href="">kmutt book store</a>

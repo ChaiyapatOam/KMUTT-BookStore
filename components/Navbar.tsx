@@ -12,7 +12,7 @@ const Navbar = () => {
       <a className="px-4" href="">Home</a>
     </div>
     <div className="p-6 py-3 flex-shirnk">
-      <a className="px-3" href="">Check oder</a>
+      <a className="px-3" href="">Check order</a>
     </div>
     <div className="p-6 py-3 flex-grow">
       <a className="px-3" href="">New Student</a>

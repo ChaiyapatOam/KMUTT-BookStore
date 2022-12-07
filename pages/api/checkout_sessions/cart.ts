@@ -8,7 +8,7 @@ import { NextApiRequest, NextApiResponse } from "next";
  * The important thing is that the product info is loaded from somewhere trusted
  * so you know the pricing information is accurate.
  */
-import { validateCartItems } from "use-shopping-cart/utilities/serverless";
+// import { validateCartItems } from "use-shopping-cart/utilities/serverless";
 import inventory from "../../../data/products";
 
 import Stripe from "stripe";
@@ -25,7 +25,7 @@ export default async function handler(
     try {
       // Validate the cart details that were sent from the client.
       const cartItems = req.body;
-      const line_items = validateCartItems(inventory as any, cartItems);
+      const line_items = req.body //validateCartItems(inventory as any, cartItems);
       // Create Checkout Sessions from body params.
       const params: Stripe.Checkout.SessionCreateParams = {
         submit_type: "pay",

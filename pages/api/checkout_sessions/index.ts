@@ -14,31 +14,38 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method === "POST") {
-    const amount: number = req.body.amount;
     try {
-      // Validate the amount that was passed from the client.
-      if (!(amount >= MIN_AMOUNT && amount <= MAX_AMOUNT)) {
-        throw new Error("Invalid amount.");
-      }
-      // Create Checkout Sessions from body params.
-      const params: Stripe.Checkout.SessionCreateParams = {
-        submit_type: "donate",
-        payment_method_types: ["card"],
-        line_items: [
-          {
-            name: "Custom ",
-            amount: formatAmountForStripe(amount, CURRENCY),
-            currency: CURRENCY,
-            quantity: 1,
-          },
-        ],
-        success_url: `${req.headers.origin}/result?session_id={CHECKOUT_SESSION_ID}`,
-        cancel_url: `${req.headers.origin}/donate-with-checkout`,
-      };
-      const checkoutSession: Stripe.Checkout.Session =
-        await stripe.checkout.sessions.create(params);
-
-      res.status(200).json(checkoutSession);
+      const { body } = req.body;
+      const redirectURL =
+      process.env.NODE_ENV === 'development'
+        ? 'http://localhost:3000'
+        : 'https://kmutt-book-store.vercel.app/';
+    
+    const transformedItem = {
+      price_data: {
+        currency: 'thb',
+        product_data: {
+          name: body?.title,
+          images: [body?.image],
+        },
+        unit_amount: body.price * 100,
+      },
+      description: body?.description,
+      quantity: body.quantity,
+    };
+    
+    const session = await stripe.checkout.sessions.create({
+      payment_method_types: ['card'],
+      line_items: [transformedItem],
+      mode: 'payment',
+      success_url: redirectURL + '?status=success',
+      cancel_url: redirectURL + '?status=cancel',
+      metadata: {
+        images: body.image,
+      },
+    });
+    
+    res.json({ id: session.id });
     } catch (err) {
       if (err instanceof Error)
         res.status(500).json({ statusCode: 500, message: err.message });

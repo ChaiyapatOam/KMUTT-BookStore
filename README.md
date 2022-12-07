@@ -1,4 +1,4 @@
-# KMUTT BookStore
+# :orange_book: KMUTT BookStore
 
 ![bookstore banner](https://raw.githubusercontent.com/ChaiyapatOam/KMUTT-BookStore/main/public/Banner.png)
 ## About this Project

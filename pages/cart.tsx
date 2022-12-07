@@ -1,10 +1,13 @@
-import React from 'react'
+import React from "react";
+import Cart from "@/components/Cart";
+import { NextPage } from "next";
 
-
-const cart = () => {
+const cart: NextPage = () => {
   return (
-    <div>cart</div>
-  )
-}
+    <div className="page-container">
+      <h1>Shopping Cart</h1>
+    </div>
+  );
+};
 
-export default cart
+export default cart;

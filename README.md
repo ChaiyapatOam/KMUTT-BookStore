@@ -19,20 +19,15 @@ Clone the project
 
 ```bash
   git clone https://github.com/ChaiyapatOam/KMUTT-BookStore.git
-```
-
-Go to the project directory
-
-```bash
   cd kmutt-bookstore
 ```
 
 Install dependencies
 
 ```bash
-  yarn
-  # or
   npm install
+  # or
+  yarn
 ```
 
 Start the server

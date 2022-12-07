@@ -7,10 +7,10 @@ import Head from "next/head";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-export default function App({ Component, pageProps }: AppProps) {
+const App = ({ Component, pageProps }: AppProps) => {
   return (
     <QueryClientProvider client={queryClient}>
-      <Head>
+    <Head>
         <title>KMUTT BookStore</title>
         <meta name="description" content="Kmutt Bookstore" />
         <meta property="og:image" content="/Banner.png" />
@@ -23,4 +23,5 @@ export default function App({ Component, pageProps }: AppProps) {
       </main>
     </QueryClientProvider>
   );
-}
+};
+export default App;

@@ -2,3 +2,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.products {
+    @apply p-5 grid lg:grid-cols-4 lg:gap-4 md:grid-cols-3 md:gap-3
+}

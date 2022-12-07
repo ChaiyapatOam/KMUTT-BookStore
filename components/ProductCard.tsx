@@ -1,6 +1,15 @@
 import React from "react";
 import ShoppingCartIcon from "@heroicons/react/24/solid/ShoppingCartIcon";
-const ProductCard = ({ name, price }: { name: string; price: number }) => {
+import { connect } from "react-redux";
+const ProductCard = ({
+  id,
+  name,
+  price,
+}: {
+  id: number;
+  name: string;
+  price: number;
+}) => {
   return (
     <div className="bg-white shadow-md border border-gray-200 rounded-lg max-w-[20rem] max-h-[20rem] dark:bg-gray-800 dark:border-gray-700 hover:border-orange">
       <img
@@ -16,11 +25,18 @@ const ProductCard = ({ name, price }: { name: string; price: number }) => {
           <p className="text-xl">{price} ฿</p>
         </span>
         <div className="h-10 w-10 text-orange cursor-pointer">
-          <ShoppingCartIcon />
+          <ShoppingCartIcon onClick={() => {}} />
         </div>
       </div>
     </div>
   );
 };
-
+/*
+const mapDispatchTopProps = (dispatch:any) => {
+  return {
+    addShopping: bindActionCreators(addShopping, dispatch),
+  };
+};
+export default connect(null, mapDispatchTopProps)(ProductCard); 
+*/
 export default ProductCard;

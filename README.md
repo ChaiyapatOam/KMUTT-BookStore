@@ -30,6 +30,14 @@ Install dependencies
   yarn
 ```
 
+create .env file
+
+```bash
+DATABASE_URL='mysql://<yourdatabase>'
+STRIPE_SECRET_KEY=pk
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=sk
+```
+
 Start the server
 
 ```bash
